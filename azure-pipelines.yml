@@ -16,6 +16,9 @@ pr:
       - hotfix/*
       - feature/*
 
+pool:
+  name: ScubaVM
+
 stages:
   - stage: Build
     jobs:
