@@ -13,7 +13,7 @@ function LatestNews() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg">
-          <div className="h-56 bg-[url('https://images.unsplash.com/photo-1543761084-556c4a44f8a1')] bg-cover bg-center"></div>
+          <div className="h-56 bg-[url('https://images.unsplash.com/photo-1558328592-c073a4b95365?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
           <div className="p-6">
             <div className="flex items-center mb-3">
               <span className="text-xs text-gray-500">28. mar 2025</span>
@@ -29,7 +29,7 @@ function LatestNews() {
         </div>
 
         <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg">
-          <div className="h-56 bg-[url('https://images.unsplash.com/photo-1621881538090-b2b26e39b9a3')] bg-cover bg-center"></div>
+          <div className="h-56 bg-[url('https://images.unsplash.com/photo-1589308078059-be1415eab4c3')] bg-cover bg-center"></div>
           <div className="p-6">
             <div className="flex items-center mb-3">
               <span className="text-xs text-gray-500">7. mar 2025</span>
@@ -45,7 +45,7 @@ function LatestNews() {
         </div>
 
         <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg">
-          <div className="h-56 bg-[url('https://images.unsplash.com/photo-1544591744-5842d4e0f6b3')] bg-cover bg-center"></div>
+          <div className="h-56 bg-[url('https://images.unsplash.com/photo-1580019542155-247062e19ce4')] bg-cover bg-center"></div>
           <div className="p-6">
             <div className="flex items-center mb-3">
               <span className="text-xs text-gray-500">13. mar 2025</span>

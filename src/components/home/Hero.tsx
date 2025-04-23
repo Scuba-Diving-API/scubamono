@@ -1,8 +1,18 @@
+import divingVideo from "../../assets/video/diving-bg.mp4";
+
 function Hero() {
   return (
     <div className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544551763-46a013bb70d5')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
-      <div className="container mx-auto px-4 py-20 relative z-10">
+      {/* Video Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <video autoPlay loop muted playsInline className="absolute w-full h-full object-cover mix-blend-overlay">
+          <source src={divingVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      {/* Content */}
+      <div className="container mx-auto px-4 py-60 relative z-10">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Velkommen til Dansk Sportsdykker Forbund</h1>
           <p className="text-xl mb-8">Oplev havets dyb og bliv en del af Danmarks største dykkernetværk</p>
