@@ -1,6 +1,6 @@
 function Newsletter() {
   return (
-    <div className="bg-blue-50 py-12">
+    <div className="bg-gradient-to-l from-blue-100 to-blue-50 py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-2xl font-bold mb-2">Tilmeld dig vores nyhedsbrev</h2>

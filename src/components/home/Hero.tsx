@@ -2,7 +2,7 @@ import divingVideo from "../../assets/video/diving-bg.mp4";
 
 function Hero() {
   return (
-    <div className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+    <div className="relative bg-gradient-to-r from-darkblue to-lightblue text-white">
       {/* Video Background */}
       <div className="absolute inset-0 overflow-hidden">
         <video autoPlay loop muted playsInline className="absolute w-full h-full object-cover mix-blend-overlay">
