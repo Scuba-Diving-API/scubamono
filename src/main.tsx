@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
-import App from "./App.tsx";
+import App from "./pages/FrontPage.tsx";
 import NewsPage from "./pages/NewsPage.tsx";
 import NewsDetailPage from "./pages/NewsDetailPage.tsx";
 import Layout from "./components/layout/Layout.tsx";
