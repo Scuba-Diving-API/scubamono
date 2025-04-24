@@ -3,7 +3,7 @@ export const federationThemes = {
   diving: {
     primary: "var(--color-brightblue)",
     secondary: "var(--color-darkblue)",
-    accent: "var(--color-lightblue)",
+    accent: "var(--color-cyan-600)",
     className: "theme-diving",
   },
   swimming: {

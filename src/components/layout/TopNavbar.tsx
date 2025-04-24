@@ -16,16 +16,8 @@ function TopNavbar({ activeOrg }: TopNavbarProps) {
   const isSubsite = !!activeOrg;
   const themeColors = isSubsite ? getThemeColors(activeOrg.id) : null;
 
-  const navbarStyle = isSubsite
-    ? {
-        backgroundColor: themeColors?.secondary || "#0d2d52",
-      }
-    : {
-        backgroundColor: "#0a1f33",
-      };
-
   return (
-    <nav style={navbarStyle} className="text-white py-2">
+    <nav className="text-black py-2 bg-difoffwhite">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-6">
@@ -41,8 +33,8 @@ function TopNavbar({ activeOrg }: TopNavbarProps) {
             {/* If we're in a subsite, show which one */}
             {isSubsite && (
               <div className="hidden md:block">
-                <span className="text-gray-300 mr-2">Du er her:</span>
-                <span className="font-semibold px-2 py-1 rounded" style={{ backgroundColor: themeColors?.primary || "#57b5eb", color: "white" }}>
+                <span className="text-black mr-2">Du er her:</span>
+                <span className="font-semibold px-2 py-1 rounded" style={{ backgroundColor: themeColors?.accent || "#57b5eb", color: "white" }}>
                   {activeOrg.name}
                 </span>
               </div>
