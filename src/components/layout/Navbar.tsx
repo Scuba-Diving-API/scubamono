@@ -1,47 +1,48 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import dsfLogo from "../../assets/images/dsflogo.png";
 
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-darkblue text-white sticky top-0 z-50">
+    <nav className="bg-blue-900 text-white sticky top-0 z-50">
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="flex items-center">
+            <Link to="/" className="flex items-center">
               <img src={dsfLogo} alt="DSF Logo" className="h-14 mr-3" />
               <div className="flex flex-col">
                 <span className="font-bold text-lg tracking-tight">Dansk Sportsdykker</span>
                 <span className="font-medium text-sm tracking-tight">Forbund</span>
               </div>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className="font-medium hover:text-cyan-300 transition-colors">
+            <Link to="/nyheder" className="font-medium hover:text-cyan-300 transition-colors">
               Nyheder
-            </a>
-            <a href="#" className="font-medium hover:text-cyan-300 transition-colors">
+            </Link>
+            <Link to="/uddannelse" className="font-medium hover:text-cyan-300 transition-colors">
               Uddannelse
-            </a>
-            <a href="#" className="font-medium hover:text-cyan-300 transition-colors">
+            </Link>
+            <Link to="/discipliner" className="font-medium hover:text-cyan-300 transition-colors">
               Discipliner
-            </a>
-            <a href="#" className="font-medium hover:text-cyan-300 transition-colors">
+            </Link>
+            <Link to="/events" className="font-medium hover:text-cyan-300 transition-colors">
               Events
-            </a>
-            <a href="#" className="font-medium hover:text-cyan-300 transition-colors">
+            </Link>
+            <Link to="/medlemmer" className="font-medium hover:text-cyan-300 transition-colors">
               For medlemmer
-            </a>
-            <a href="#" className="font-medium hover:text-cyan-300 transition-colors">
+            </Link>
+            <Link to="/om-dsf" className="font-medium hover:text-cyan-300 transition-colors">
               Om DSF
-            </a>
-            <a href="#" className="font-medium bg-cyan-600 px-4 py-2 rounded-full hover:bg-cyan-700 transition-colors">
+            </Link>
+            <Link to="/webshop" className="font-medium bg-cyan-600 px-4 py-2 rounded-full hover:bg-cyan-700 transition-colors">
               Webshop
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -58,27 +59,27 @@ function Navbar() {
         {mobileMenuOpen && (
           <div className="md:hidden pt-4 pb-3 border-t border-blue-800 mt-3">
             <div className="flex flex-col space-y-3">
-              <a href="#" className="px-3 py-2 hover:bg-blue-800 rounded-md">
+              <Link to="/nyheder" className="px-3 py-2 hover:bg-blue-800 rounded-md">
                 Nyheder
-              </a>
-              <a href="#" className="px-3 py-2 hover:bg-blue-800 rounded-md">
+              </Link>
+              <Link to="/uddannelse" className="px-3 py-2 hover:bg-blue-800 rounded-md">
                 Uddannelse
-              </a>
-              <a href="#" className="px-3 py-2 hover:bg-blue-800 rounded-md">
+              </Link>
+              <Link to="/discipliner" className="px-3 py-2 hover:bg-blue-800 rounded-md">
                 Discipliner
-              </a>
-              <a href="#" className="px-3 py-2 hover:bg-blue-800 rounded-md">
+              </Link>
+              <Link to="/events" className="px-3 py-2 hover:bg-blue-800 rounded-md">
                 Events
-              </a>
-              <a href="#" className="px-3 py-2 hover:bg-blue-800 rounded-md">
+              </Link>
+              <Link to="/medlemmer" className="px-3 py-2 hover:bg-blue-800 rounded-md">
                 For medlemmer
-              </a>
-              <a href="#" className="px-3 py-2 hover:bg-blue-800 rounded-md">
+              </Link>
+              <Link to="/om-dsf" className="px-3 py-2 hover:bg-blue-800 rounded-md">
                 Om DSF
-              </a>
-              <a href="#" className="px-3 py-2 bg-cyan-600 rounded-md text-center">
+              </Link>
+              <Link to="/webshop" className="px-3 py-2 bg-cyan-600 rounded-md text-center">
                 Webshop
-              </a>
+              </Link>
             </div>
           </div>
         )}
