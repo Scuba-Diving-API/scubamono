@@ -1,11 +1,17 @@
 import dsfLogo from "../assets/images/dsflogo.png";
+import divingBgVideo from "../assets/video/diving-bg.mp4";
+import iceHockeyBgVideo from "../assets/video/icehockey-bg.mp4";
+import archeryBgVideo from "../assets/video/bow-bg.mp4";
+import skydivingBgVideo from "../assets/video/skydiving-bg.mp4";
+import surfingBgVideo from "../assets/video/surfing-bg.mp4";
+import triathlonBgVideo from "../assets/video/triathlon-bg.mp4";
 
 interface SportsFederation {
   id: string;
   name: string;
   description: string;
   logo?: string;
-  color: string;
+  video?: string;
 }
 
 export const sportsFederations: SportsFederation[] = [
@@ -14,36 +20,36 @@ export const sportsFederations: SportsFederation[] = [
     name: "Dansk Sportsdykker Forbund",
     description: "Danmarks officielle sportsdykkerforbund under Danmarks Idrætsforbund.",
     logo: dsfLogo,
-    color: "brightblue",
+    video: divingBgVideo,
   },
   {
-    id: "swimming",
-    name: "Dansk Svømmeunion",
-    description: "Danmarks officielle svømmeunion under Danmarks Idrætsforbund.",
-    color: "blue-500",
+    id: "icehockey",
+    name: "Dansk Ishockey Forbund",
+    description: "Dansk Ishockey Forbund er det officielle specialforbund for ishockey i Danmark, der fremme ishockey og ishockey-klassen i Danmark.",
+    video: iceHockeyBgVideo,
   },
   {
-    id: "sailing",
-    name: "Dansk Sejlunion",
-    description: "Danmarks officielle sejlunion under Danmarks Idrætsforbund.",
-    color: "indigo-600",
+    id: "Bueskydning",
+    name: "Dansk Bueskydning Forbund",
+    description: "Dansk Bueskydning Forbund er det officielle specialforbund for bueskydning i Danmark, der fremme bueskydning og bueskydning-klassen i Danmark.",
+    video: archeryBgVideo, // Using diving video as placeholder - replace with actual sailing video
   },
   {
-    id: "rowing",
-    name: "Dansk Forening for Rosport",
-    description: "Danmarks officielle roforbund under Danmarks Idrætsforbund.",
-    color: "red-600",
+    id: "skydiving",
+    name: "Dansk Faldskærms Union",
+    description: "Dansk Faldskærms Union er det officielle specialforbund for faldskærm i Danmark, der fremme faldskærm og faldskærm-klassen i Danmark.",
+    video: skydivingBgVideo, // Using diving video as placeholder - replace with actual rowing video
   },
   {
     id: "triathlon",
     name: "Dansk Triathlon Forbund",
     description: "Danmarks officielle triathlonforbund under Danmarks Idrætsforbund.",
-    color: "green-600",
+    video: triathlonBgVideo, // Using diving video as placeholder - replace with actual triathlon video
   },
   {
-    id: "canoekayak",
-    name: "Dansk Kano og Kajak Forbund",
-    description: "Danmarks officielle kano og kajak forbund under Danmarks Idrætsforbund.",
-    color: "yellow-600",
+    id: "KFUM ID",
+    name: "KFUM ID",
+    description: "KFUM ID er det officielle specialforbund for KFUM i Danmark, der fremme KFUM og KFUM-klassen i Danmark.",
+    video: surfingBgVideo, // Using diving video as placeholder - replace with actual canoekayak video
   },
 ];

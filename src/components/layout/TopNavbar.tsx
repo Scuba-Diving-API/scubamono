@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { getThemeColors } from "../../utils/federationThemes";
 
@@ -13,13 +12,6 @@ interface TopNavbarProps {
 }
 
 function TopNavbar({ activeOrg }: TopNavbarProps) {
-  const parentLinks = [
-    { name: "DIF", path: "/" },
-    { name: "Om DIF", path: "/om-dif" },
-    { name: "Nyheder", path: "/nyheder" },
-    { name: "Kontakt", path: "/kontakt" },
-  ];
-
   // If we're in a sports federation subsite
   const isSubsite = !!activeOrg;
   const themeColors = isSubsite ? getThemeColors(activeOrg.id) : null;
@@ -27,11 +19,9 @@ function TopNavbar({ activeOrg }: TopNavbarProps) {
   const navbarStyle = isSubsite
     ? {
         backgroundColor: themeColors?.secondary || "#0d2d52",
-        borderBottom: `4px solid ${themeColors?.primary || "#57b5eb"}`,
       }
     : {
         backgroundColor: "#0a1f33",
-        borderBottom: "4px solid #003366",
       };
 
   return (
@@ -45,17 +35,6 @@ function TopNavbar({ activeOrg }: TopNavbarProps) {
               </svg>
               <span className="font-semibold">Danmarks Idrætsforbund</span>
             </Link>
-
-            {/* Only show parent links if we're in a subsite */}
-            {isSubsite && (
-              <div className="hidden md:flex space-x-4">
-                {parentLinks.map((link) => (
-                  <Link key={link.path} to={link.path} className="text-gray-300 hover:text-white">
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-            )}
           </div>
 
           <div className="flex items-center space-x-4">
@@ -68,9 +47,6 @@ function TopNavbar({ activeOrg }: TopNavbarProps) {
                 </span>
               </div>
             )}
-
-            {/* Login button */}
-            <button className="bg-white text-gray-900 px-4 py-1 rounded hover:bg-gray-200 transition-colors">Log ind</button>
           </div>
         </div>
       </div>
