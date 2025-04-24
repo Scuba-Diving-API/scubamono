@@ -13,6 +13,9 @@ import EventsPage from "./pages/EventsPage.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
 import WebshopPage from "./pages/WebshopPage.tsx";
 import ParentPage from "./pages/ParentPage.tsx";
+import ParentAboutPage from "./pages/ParentAboutPage.tsx";
+import ParentNewsPage from "./pages/ParentNewsPage.tsx";
+import ParentContactPage from "./pages/ParentContactPage.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -21,9 +24,9 @@ createRoot(document.getElementById("root")!).render(
         {/* Parent site routes */}
         <Route element={<ParentLayout />}>
           <Route path="/" element={<ParentPage />} />
-          <Route path="/om-dif" element={<div>Om DIF Page</div>} />
-          <Route path="/kontakt" element={<div>Kontakt Page</div>} />
-          <Route path="/nyheder" element={<div>Parent News Page</div>} />
+          <Route path="/om-dif" element={<ParentAboutPage />} />
+          <Route path="/kontakt" element={<ParentContactPage />} />
+          <Route path="/nyheder" element={<ParentNewsPage />} />
         </Route>
 
         {/* Diving federation subsite */}
