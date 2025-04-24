@@ -15,6 +15,10 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/" element={<App />} />
           <Route path="/nyheder" element={<NewsPage />} />
           <Route path="/nyheder/:id" element={<NewsDetailPage />} />
+          <Route path="/uddannelse" element={<div />} />
+          <Route path="/discipliner" element={<div />} />
+          <Route path="/events" element={<div />} />
+          
           {/* Add more routes here for other pages */}
         </Route>
       </Routes>

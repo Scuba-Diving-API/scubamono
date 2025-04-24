@@ -34,7 +34,7 @@ function Navbar() {
             <Link to="/events" className="font-medium hover:text-cyan-300 transition-colors">
               Events
             </Link>
-            <Link to="/medlemmer" className="font-medium hover:text-cyan-300 transition-colors">
+            <Link to="https://tailor.sportsdykning.dk/" target="_blank" className="font-medium hover:text-cyan-300 transition-colors">
               For medlemmer
             </Link>
             <Link to="/om-dsf" className="font-medium hover:text-cyan-300 transition-colors">
