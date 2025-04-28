@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import TopNavbar from "./TopNavbar";
 import dsfLogo from "../../assets/images/dsflogo.png";
+import { getThemeColors } from "../../utils/federationThemes";
 
 // Define the active organization for the current subpage
 const dsfOrg = {
@@ -12,6 +13,7 @@ const dsfOrg = {
 };
 
 // Get theme colors based on federation ID
+const themeColors = getThemeColors(dsfOrg.id);
 
 // Navigation links configuration for the diving federation
 const divingLinks = [
@@ -35,6 +37,40 @@ const navbarColors = {
   buttonHoverBgColor: "bg-cyan-700",
 };
 
+// Footer configuration for the diving federation
+const footerColumns = [
+  {
+    title: "Hurtige links",
+    links: [
+      { to: "/diving/nyheder", label: "Nyheder" },
+      { to: "/diving/events", label: "Events" },
+      { to: "/diving/uddannelse", label: "Uddannelse" },
+      { to: "/diving/find-klub", label: "Find lokal klub" },
+      { to: "/diving/bliv-medlem", label: "Bliv medlem" },
+      { to: "/diving/webshop", label: "Webshop" },
+    ],
+  },
+  {
+    title: "Information",
+    links: [
+      { to: "/diving/om-dsf", label: "Om DSF" },
+      { to: "/diving/bestyrelsen", label: "Bestyrelsen" },
+      { to: "/diving/privatlivspolitik", label: "Privatlivspolitik" },
+      { to: "/diving/faq", label: "Ofte stillede spørgsmål" },
+      { to: "/diving/medlemsfordele", label: "Medlemsfordele" },
+    ],
+  },
+];
+
+const footerColors = {
+  bgColor: "bg-darkblue",
+  textColor: "text-white",
+  headingColor: "text-white",
+  accentColor: "text-cyan-400",
+  borderColor: "border-gray-800",
+  hoverColor: "text-white",
+};
+
 function Layout() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -52,7 +88,26 @@ function Layout() {
       <main className="flex-grow">
         <Outlet />
       </main>
-      <Footer />
+      <Footer
+        logo={{
+          src: dsfLogo,
+          alt: "DSF Logo",
+        }}
+        description="Dansk Sportsdykker Forbund - Stedet for alle former for undervandsaktiviteter i Danmark."
+        contact={{
+          address: "Idrættens Hus, Brøndby Stadion 20, 2605 Brøndby",
+          phone: "+45 62 65 61 30",
+          email: "dsf@sportsdykning.dk",
+        }}
+        columns={footerColumns}
+        socialLinks={{
+          facebook: "https://www.facebook.com/sportsdykning",
+          instagram: "https://www.instagram.com/sportsdykning",
+          youtube: "https://www.youtube.com/user/sportsdykning",
+        }}
+        colors={footerColors}
+        copyright="© 2025 Dansk Sportsdykker Forbund. Alle rettigheder forbeholdes."
+      />
     </div>
   );
 }

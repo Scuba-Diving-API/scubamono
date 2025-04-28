@@ -19,7 +19,7 @@ function ParentPage() {
               <Link
                 key={federation.id}
                 to={`/${federation.id}`}
-                className="min-h-96 flex flex-col justify-center items-center hover:opacity-90 hover:bg-zinc-700 transition-opacity relative overflow-hidden"
+                className="min-h-[500px] flex flex-col justify-center items-center hover:opacity-90 hover:bg-zinc-700 transition-opacity relative overflow-hidden"
                 onMouseEnter={() => setHoveredFederation(federation.id)}
                 onMouseLeave={() => setHoveredFederation(null)}
               >

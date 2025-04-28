@@ -6,6 +6,12 @@ export const federationThemes = {
     accent: "var(--color-cyan-600)",
     className: "theme-diving",
   },
+  icehockey: {
+    primary: "var(--color-diuprimary)",
+    secondary: "var(--color-diusecondary)",
+    accent: "var(--color-diuaccent)",
+    className: "theme-icehockey",
+  },
   swimming: {
     primary: "#0099cc",
     secondary: "#006699",
