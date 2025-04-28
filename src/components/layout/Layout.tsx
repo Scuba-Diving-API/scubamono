@@ -3,7 +3,6 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import TopNavbar from "./TopNavbar";
 import dsfLogo from "../../assets/images/dsflogo.png";
-import { getThemeColors } from "../../utils/federationThemes";
 
 // Define the active organization for the current subpage
 const dsfOrg = {
@@ -13,7 +12,6 @@ const dsfOrg = {
 };
 
 // Get theme colors based on federation ID
-const themeColors = getThemeColors(dsfOrg.id);
 
 // Navigation links configuration for the diving federation
 const divingLinks = [
