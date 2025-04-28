@@ -1,31 +1,43 @@
 import { Outlet } from "react-router-dom";
+import Navbar from "./Navbar";
 import TopNavbar from "./TopNavbar";
+import difLogo from "../../assets/images/diflogo.svg";
 
 // The parent layout doesn't have an active organization
 // since it represents the top-level DIF site
+
+// Navigation links configuration for the parent site (DIF)
+const parentLinks = [
+  { to: "/", label: "Forside" },
+  { to: "/om-dif", label: "Om DIF" },
+  { to: "/nyheder", label: "Nyheder" },
+  { to: "/kontakt", label: "Kontakt" },
+];
+
+// Navbar colors configuration for the parent site
+const parentNavbarColors = {
+  bgColor: "bg-difred",
+  textColor: "text-white",
+  hoverColor: "underline",
+  mobileMenuBorderColor: "border-red-700",
+  mobileLinkHoverBgColor: "bg-red-700",
+  buttonBgColor: "bg-red-600",
+  buttonHoverBgColor: "bg-red-700",
+};
 
 function ParentLayout() {
   return (
     <div className="min-h-screen flex flex-col">
       <TopNavbar />
-      <div className="bg-difred text-white">
-        <div className="container mx-auto px-4 py-3">
-          <nav className="flex space-x-6">
-            <a href="/" className="font-medium hover:underline">
-              Forside
-            </a>
-            <a href="/om-dif" className="font-medium hover:underline">
-              Om DIF
-            </a>
-            <a href="/nyheder" className="font-medium hover:underline">
-              Nyheder
-            </a>
-            <a href="/kontakt" className="font-medium hover:underline">
-              Kontakt
-            </a>
-          </nav>
-        </div>
-      </div>
+      <Navbar
+        logo={{
+          src: difLogo,
+          alt: "DIF Logo",
+          primaryText: "Danmarks Idrætsforbund",
+        }}
+        links={parentLinks}
+        colors={parentNavbarColors}
+      />
       <main className="flex-grow">
         <Outlet />
       </main>

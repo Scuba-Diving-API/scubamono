@@ -1,4 +1,5 @@
 import dsfLogo from "../assets/images/dsflogo.png";
+import diuLogo from "../assets/images/diulogo.png";
 import divingBgVideo from "../assets/video/diving-bg.mp4";
 import iceHockeyBgVideo from "../assets/video/icehockey-bg.mp4";
 import archeryBgVideo from "../assets/video/bow-bg.mp4";
@@ -25,19 +26,23 @@ export const sportsFederations: SportsFederation[] = [
   {
     id: "icehockey",
     name: "Dansk Ishockey Forbund",
-    description: "Dansk Ishockey Forbund er det officielle specialforbund for ishockey i Danmark, der fremme ishockey og ishockey-klassen i Danmark.",
+    description:
+      "Dansk Ishockey Forbund er det officielle specialforbund for ishockey i Danmark, der fremme ishockey og ishockey-klassen i Danmark.",
+    logo: diuLogo,
     video: iceHockeyBgVideo,
   },
   {
     id: "Bueskydning",
     name: "Dansk Bueskydning Forbund",
-    description: "Dansk Bueskydning Forbund er det officielle specialforbund for bueskydning i Danmark, der fremme bueskydning og bueskydning-klassen i Danmark.",
+    description:
+      "Dansk Bueskydning Forbund er det officielle specialforbund for bueskydning i Danmark, der fremme bueskydning og bueskydning-klassen i Danmark.",
     video: archeryBgVideo, // Using diving video as placeholder - replace with actual sailing video
   },
   {
     id: "skydiving",
     name: "Dansk Faldskærms Union",
-    description: "Dansk Faldskærms Union er det officielle specialforbund for faldskærm i Danmark, der fremme faldskærm og faldskærm-klassen i Danmark.",
+    description:
+      "Dansk Faldskærms Union er det officielle specialforbund for faldskærm i Danmark, der fremme faldskærm og faldskærm-klassen i Danmark.",
     video: skydivingBgVideo, // Using diving video as placeholder - replace with actual rowing video
   },
   {
@@ -49,7 +54,8 @@ export const sportsFederations: SportsFederation[] = [
   {
     id: "KFUM ID",
     name: "KFUM ID",
-    description: "KFUM ID er det officielle specialforbund for KFUM i Danmark, der fremme KFUM og KFUM-klassen i Danmark.",
+    description:
+      "KFUM ID er det officielle specialforbund for KFUM i Danmark, der fremme KFUM og KFUM-klassen i Danmark.",
     video: surfingBgVideo, // Using diving video as placeholder - replace with actual canoekayak video
   },
 ];
