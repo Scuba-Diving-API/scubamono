@@ -32,30 +32,30 @@ export const sportsFederations: SportsFederation[] = [
     video: iceHockeyBgVideo,
   },
   {
-    id: "Bueskydning",
-    name: "Dansk Bueskydning Forbund",
+    id: "bueskydning",
+    name: "Bueskydning Danmark",
     description:
-      "Dansk Bueskydning Forbund er det officielle specialforbund for bueskydning i Danmark, der fremme bueskydning og bueskydning-klassen i Danmark.",
-    video: archeryBgVideo, // Using diving video as placeholder - replace with actual sailing video
+      "Bueskydning Danmark er den øverste faglige myndighed inden for bueskydning i Danmark, med det formål at fremme og udvikle sporten.",
+    video: archeryBgVideo,
   },
   {
     id: "skydiving",
     name: "Dansk Faldskærms Union",
     description:
       "Dansk Faldskærms Union er det officielle specialforbund for faldskærm i Danmark, der fremme faldskærm og faldskærm-klassen i Danmark.",
-    video: skydivingBgVideo, // Using diving video as placeholder - replace with actual rowing video
+    video: skydivingBgVideo,
   },
   {
     id: "triathlon",
     name: "Dansk Triathlon Forbund",
     description: "Danmarks officielle triathlonforbund under Danmarks Idrætsforbund.",
-    video: triathlonBgVideo, // Using diving video as placeholder - replace with actual triathlon video
+    video: triathlonBgVideo,
   },
   {
     id: "KFUM ID",
     name: "KFUM ID",
     description:
       "KFUM ID er det officielle specialforbund for KFUM i Danmark, der fremme KFUM og KFUM-klassen i Danmark.",
-    video: surfingBgVideo, // Using diving video as placeholder - replace with actual canoekayak video
+    video: surfingBgVideo,
   },
 ];

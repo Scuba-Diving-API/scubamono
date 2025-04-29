@@ -12,6 +12,12 @@ export const federationThemes = {
     accent: "var(--color-diuaccent)",
     className: "theme-icehockey",
   },
+  bueskydning: {
+    primary: "#2e7d32",  // green-800
+    secondary: "#1b5e20", // green-900
+    accent: "#66bb6a",    // green-400
+    className: "theme-bueskydning",
+  },
   swimming: {
     primary: "#0099cc",
     secondary: "#006699",
