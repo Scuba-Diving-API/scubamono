@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { Navigate, useLocation } from "react-router-dom";
 
 interface AuthGuardProps {
   children: React.ReactNode;
@@ -7,7 +7,7 @@ interface AuthGuardProps {
 
 const AuthGuard: React.FC<AuthGuardProps> = ({ children }) => {
   const location = useLocation();
-  const isAuthenticated = sessionStorage.getItem('isAuthenticated') === 'true';
+  const isAuthenticated = sessionStorage.getItem("isAuthenticated") === "true";
 
   // Check if user is authenticated
   if (!isAuthenticated) {

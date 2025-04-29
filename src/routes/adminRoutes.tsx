@@ -12,13 +12,19 @@ import AuthGuard from "../pages/admin/AuthGuard";
 const divingAdminRoutes = (
   <Route path="/diving/admin">
     <Route path="login" element={<LoginPage />} />
-    <Route element={<AuthGuard><AdminLayout /></AuthGuard>}>
+    <Route
+      element={
+        <AuthGuard>
+          <AdminLayout />
+        </AuthGuard>
+      }
+    >
       <Route path="dashboard" element={<DashboardPage />} />
       <Route path="news" element={<NewsManagementPage />} />
       <Route path="events" element={<EventsManagementPage />} />
       <Route path="education" element={<EducationManagementPage />} />
       <Route path="disciplines" element={<DisciplinesManagementPage />} />
-      
+
       {/* Redirect to dashboard if just /diving/admin is accessed */}
       <Route path="" element={<Navigate to="/diving/admin/dashboard" replace />} />
     </Route>
