@@ -32,10 +32,10 @@ interface NavbarProps {
 function Navbar({ logo, links, colors, federationId }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-  
+
   // Determine the logo's destination based on the current federation context
   const logoDestination = federationId ? `/${federationId}` : "/";
-  
+
   // Check if we're in a federation context by looking at the URL path
   const isFederationContext = federationId && location.pathname.startsWith(`/${federationId}`);
 
@@ -50,9 +50,7 @@ function Navbar({ logo, links, colors, federationId }: NavbarProps) {
               {(logo.primaryText || logo.secondaryText) && (
                 <div className="flex flex-col">
                   {logo.primaryText && <span className="font-bold text-lg tracking-tight">{logo.primaryText}</span>}
-                  {logo.secondaryText && (
-                    <span className="font-medium text-sm tracking-tight">{logo.secondaryText}</span>
-                  )}
+                  {logo.secondaryText && <span className="font-medium text-sm tracking-tight">{logo.secondaryText}</span>}
                 </div>
               )}
             </Link>
@@ -62,21 +60,11 @@ function Navbar({ logo, links, colors, federationId }: NavbarProps) {
           <div className="hidden md:flex items-center space-x-8">
             {links.map((link, index) =>
               link.isButton ? (
-                <Link
-                  key={index}
-                  to={link.to}
-                  className={`font-medium ${colors.buttonBgColor} px-4 py-2 rounded-full hover:${colors.buttonHoverBgColor} transition-colors`}
-                  target={link.isExternal ? "_blank" : undefined}
-                >
+                <Link key={index} to={link.to} className={`font-medium ${colors.buttonBgColor} px-4 py-2 rounded-full hover:${colors.buttonHoverBgColor} transition-colors`} target={link.isExternal ? "_blank" : undefined}>
                   {link.label}
                 </Link>
               ) : (
-                <Link
-                  key={index}
-                  to={link.to}
-                  className={`font-medium hover:${colors.hoverColor} transition-colors`}
-                  target={link.isExternal ? "_blank" : undefined}
-                >
+                <Link key={index} to={link.to} className={`font-medium hover:${colors.hoverColor} transition-colors`} target={link.isExternal ? "_blank" : undefined}>
                   {link.label}
                 </Link>
               )
@@ -85,23 +73,9 @@ function Navbar({ logo, links, colors, federationId }: NavbarProps) {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={colors.textColor + " focus:outline-none"}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"}
-                />
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className={colors.textColor + " focus:outline-none"}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"} />
               </svg>
             </button>
           </div>
@@ -112,16 +86,7 @@ function Navbar({ logo, links, colors, federationId }: NavbarProps) {
           <div className={`md:hidden pt-4 pb-3 border-t ${colors.mobileMenuBorderColor} mt-3`}>
             <div className="flex flex-col space-y-3">
               {links.map((link, index) => (
-                <Link
-                  key={index}
-                  to={link.to}
-                  className={
-                    link.isButton
-                      ? `px-3 py-2 ${colors.buttonBgColor} rounded-md text-center`
-                      : `px-3 py-2 hover:${colors.mobileLinkHoverBgColor} rounded-md`
-                  }
-                  target={link.isExternal ? "_blank" : undefined}
-                >
+                <Link key={index} to={link.to} className={link.isButton ? `px-3 py-2 ${colors.buttonBgColor} rounded-md text-center` : `px-3 py-2 hover:${colors.mobileLinkHoverBgColor} rounded-md`} target={link.isExternal ? "_blank" : undefined}>
                   {link.label}
                 </Link>
               ))}
