@@ -1,4 +1,4 @@
-import { Route, Navigate } from "react-router-dom";
+import { Route } from "react-router-dom";
 import ArcheryLayout from "../components/layout/ArcheryLayout";
 import ArcheryFrontPage from "../pages/bueskydning/ArcheryFrontPage";
 import ArcheryNewsPage from "../pages/bueskydning/ArcheryNewsPage";

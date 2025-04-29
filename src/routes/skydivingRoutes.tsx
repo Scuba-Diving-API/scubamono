@@ -1,4 +1,4 @@
-import { Route, Navigate } from "react-router-dom";
+import { Route } from "react-router-dom";
 import SkydivingLayout from "../components/layout/SkydivingLayout";
 import SkydivingFrontPage from "../pages/skydiving/SkydivingFrontPage";
 import SkydivingNewsPage from "../pages/skydiving/SkydivingNewsPage";
