@@ -26,23 +26,20 @@ export const sportsFederations: SportsFederation[] = [
   {
     id: "icehockey",
     name: "Dansk Ishockey Forbund",
-    description:
-      "Dansk Ishockey Forbund er det officielle specialforbund for ishockey i Danmark, der fremme ishockey og ishockey-klassen i Danmark.",
+    description: "Dansk Ishockey Forbund er det officielle specialforbund for ishockey i Danmark, der fremme ishockey og ishockey-klassen i Danmark.",
     logo: diuLogo,
     video: iceHockeyBgVideo,
   },
   {
     id: "bueskydning",
     name: "Bueskydning Danmark",
-    description:
-      "Bueskydning Danmark er den øverste faglige myndighed inden for bueskydning i Danmark, med det formål at fremme og udvikle sporten.",
+    description: "Bueskydning Danmark er den øverste faglige myndighed inden for bueskydning i Danmark, med det formål at fremme og udvikle sporten.",
     video: archeryBgVideo,
   },
   {
     id: "skydiving",
     name: "Dansk Faldskærms Union",
-    description:
-      "Dansk Faldskærms Union er det officielle specialforbund for faldskærm i Danmark, der fremme faldskærm og faldskærm-klassen i Danmark.",
+    description: "Dansk Faldskærms Union er det officielle specialforbund for faldskærm i Danmark, der fremme faldskærm og faldskærm-klassen i Danmark.",
     video: skydivingBgVideo,
   },
   {
@@ -54,8 +51,7 @@ export const sportsFederations: SportsFederation[] = [
   {
     id: "KFUM ID",
     name: "KFUM ID",
-    description:
-      "KFUM ID er det officielle specialforbund for KFUM i Danmark, der fremme KFUM og KFUM-klassen i Danmark.",
+    description: "KFUM ID er det officielle specialforbund for KFUM i Danmark, der fremme KFUM og KFUM-klassen i Danmark.",
     video: surfingBgVideo,
   },
 ];

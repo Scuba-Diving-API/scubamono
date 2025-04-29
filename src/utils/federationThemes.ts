@@ -13,10 +13,16 @@ export const federationThemes = {
     className: "theme-icehockey",
   },
   bueskydning: {
-    primary: "#2e7d32",  // green-800
+    primary: "#2e7d32", // green-800
     secondary: "#1b5e20", // green-900
-    accent: "#66bb6a",    // green-400
+    accent: "#66bb6a", // green-400
     className: "theme-bueskydning",
+  },
+  skydiving: {
+    primary: "#1e3a8a", // blue-900
+    secondary: "#1e40af", // blue-800
+    accent: "#93c5fd", // blue-300
+    className: "theme-skydiving",
   },
   swimming: {
     primary: "#0099cc",

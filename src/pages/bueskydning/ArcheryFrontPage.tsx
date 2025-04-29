@@ -6,33 +6,16 @@ function ArcheryFrontPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-screen max-h-[600px] overflow-hidden">
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          src={archeryBgVideo}
-        />
+        <video className="absolute inset-0 w-full h-full object-cover" autoPlay muted loop playsInline src={archeryBgVideo} />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-center">
           <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Bueskydning Danmark
-            </h1>
-            <p className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
-              – Det er sjovt at skyde med bue
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Bueskydning Danmark</h1>
+            <p className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">– Det er sjovt at skyde med bue</p>
             <div className="flex flex-col md:flex-row gap-4 justify-center">
-              <Link
-                to="/bueskydning/find-klub"
-                className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition-colors"
-              >
+              <Link to="/bueskydning/find-klub" className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition-colors">
                 Find en klub
               </Link>
-              <Link
-                to="/bueskydning/stævner"
-                className="bg-white hover:bg-gray-100 text-green-800 font-bold py-3 px-6 rounded-full transition-colors"
-              >
+              <Link to="/bueskydning/stævner" className="bg-white hover:bg-gray-100 text-green-800 font-bold py-3 px-6 rounded-full transition-colors">
                 Se kommende stævner
               </Link>
             </div>
@@ -51,24 +34,18 @@ function ArcheryFrontPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold text-green-800 mb-3">Vores Mission</h3>
-                <p className="text-gray-700">
-                  At samle alle danske foreninger med bueskydning på programmet under én fælles ledelse og tilbyde udviklingsmuligheder for foreningerne og deres medlemmer.
-                </p>
+                <p className="text-gray-700">At samle alle danske foreninger med bueskydning på programmet under én fælles ledelse og tilbyde udviklingsmuligheder for foreningerne og deres medlemmer.</p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold text-green-800 mb-3">For Klubber</h3>
-                <p className="text-gray-700">
-                  Vi tilbyder klubber støtte, uddannelse, and ressourcer for at fremme bueskydning i Danmark.
-                </p>
+                <p className="text-gray-700">Vi tilbyder klubber støtte, uddannelse, and ressourcer for at fremme bueskydning i Danmark.</p>
                 <Link to="/bueskydning/om-os" className="inline-block mt-4 text-green-600 hover:text-green-800 font-medium">
                   Læs mere om tilbud
                 </Link>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold text-green-800 mb-3">Stævner & Konkurrencer</h3>
-                <p className="text-gray-700">
-                  Vi planlægger, afholder og fører tilsyn med alle stævneaktiviteter inden for forbundets område.
-                </p>
+                <p className="text-gray-700">Vi planlægger, afholder og fører tilsyn med alle stævneaktiviteter inden for forbundets område.</p>
                 <Link to="/bueskydning/stævner" className="inline-block mt-4 text-green-600 hover:text-green-800 font-medium">
                   Se kommende stævner
                 </Link>
@@ -93,9 +70,7 @@ function ArcheryFrontPage() {
               <div className="p-6">
                 <span className="text-sm text-gray-500">29. april 2025</span>
                 <h3 className="text-xl font-semibold mt-2 mb-3">Invitation til Sommerskydning 2025</h3>
-                <p className="text-gray-700 mb-4">
-                  Bueskydning Danmark er klar med invitationen for Sommerskydning 2025! Sommerskydningen er et landsdækkende arrangement.
-                </p>
+                <p className="text-gray-700 mb-4">Bueskydning Danmark er klar med invitationen for Sommerskydning 2025! Sommerskydningen er et landsdækkende arrangement.</p>
                 <Link to="/bueskydning/nyheder/sommerskydning-2025" className="text-green-600 hover:text-green-800 font-medium">
                   Læs mere
                 </Link>
@@ -106,9 +81,7 @@ function ArcheryFrontPage() {
               <div className="p-6">
                 <span className="text-sm text-gray-500">29. april 2025</span>
                 <h3 className="text-xl font-semibold mt-2 mb-3">Mentaltræning med bue og pil</h3>
-                <p className="text-gray-700 mb-4">
-                  Nedenstående artikel er bragt bladet BUESKYDNING i september 2010 og bragt i magasinet Psykologi.
-                </p>
+                <p className="text-gray-700 mb-4">Nedenstående artikel er bragt bladet BUESKYDNING i september 2010 og bragt i magasinet Psykologi.</p>
                 <Link to="/bueskydning/nyheder/mentaltraening" className="text-green-600 hover:text-green-800 font-medium">
                   Læs mere
                 </Link>
@@ -119,9 +92,7 @@ function ArcheryFrontPage() {
               <div className="p-6">
                 <span className="text-sm text-gray-500">23. april 2025</span>
                 <h3 className="text-xl font-semibold mt-2 mb-3">Servicemeddelelse til alle foreninger</h3>
-                <p className="text-gray-700 mb-4">
-                  Vigtig information til alle medlemsforeninger vedrørende kommende ændringer og arrangementer.
-                </p>
+                <p className="text-gray-700 mb-4">Vigtig information til alle medlemsforeninger vedrørende kommende ændringer og arrangementer.</p>
                 <Link to="/bueskydning/nyheder/servicemeddelelse" className="text-green-600 hover:text-green-800 font-medium">
                   Læs mere
                 </Link>
@@ -215,14 +186,8 @@ function ArcheryFrontPage() {
             <h2 className="text-3xl font-bold mb-6">Vil du være opdateret på, hvad der sker i bueskydning?</h2>
             <p className="text-xl mb-8">Så tilmeld dig vores nyhedsbrev!</p>
             <div className="flex flex-col md:flex-row gap-4 justify-center">
-              <input
-                type="email"
-                placeholder="Din e-mail adresse"
-                className="px-4 py-3 rounded-lg w-full md:w-96 text-gray-800 focus:outline-none"
-              />
-              <button className="bg-white hover:bg-gray-100 text-green-800 font-bold py-3 px-6 rounded-lg transition-colors">
-                TILMELD
-              </button>
+              <input type="email" placeholder="Din e-mail adresse" className="px-4 py-3 rounded-lg w-full md:w-96 text-gray-800 focus:outline-none" />
+              <button className="bg-white hover:bg-gray-100 text-green-800 font-bold py-3 px-6 rounded-lg transition-colors">TILMELD</button>
             </div>
           </div>
         </div>
