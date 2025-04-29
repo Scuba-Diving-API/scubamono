@@ -13,9 +13,9 @@ export const federationThemes = {
     className: "theme-icehockey",
   },
   bueskydning: {
-    primary: "#2e7d32", // green-800
-    secondary: "#1b5e20", // green-900
-    accent: "#66bb6a", // green-400
+    primary: "var(--color-pink)",
+    secondary: "var(--color-bueblue)",  
+    accent: "var(--color-gray)",
     className: "theme-bueskydning",
   },
   skydiving: {

@@ -6,14 +6,4 @@ import ArcheryRoutes, { ArcheryFallbackRoutes } from "./archeryRoutes";
 import SkydivingRoutes, { SkydivingFallbackRoutes } from "./skydivingRoutes";
 
 // Export all routes as JSX elements directly, not as a component
-export const routes = [
-  ParentRoutes, 
-  DivingRoutes, 
-  IceHockeyRoutes,
-  ArcheryRoutes,
-  SkydivingRoutes,
-  ...DivingFallbackRoutes,
-  ...ArcheryFallbackRoutes,
-  ...SkydivingFallbackRoutes,
-  ...PlaceholderRoutes
-];
+export const routes = [ParentRoutes, DivingRoutes, IceHockeyRoutes, ArcheryRoutes, SkydivingRoutes, ...DivingFallbackRoutes, ...ArcheryFallbackRoutes, ...SkydivingFallbackRoutes, ...PlaceholderRoutes];

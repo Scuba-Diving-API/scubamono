@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import TopNavbar from "./TopNavbar";
-import archeryLogo from "../../assets/images/archerylogo.svg"; // You'll need to add this logo
+import archeryLogo from "../../assets/images/archerylogo.svg"; // Using the SVG logo
 import { getThemeColors } from "../../utils/federationThemes";
 
 // Define the active organization for the archery federation
@@ -15,26 +15,26 @@ const archeryOrg = {
 // Get theme colors based on federation ID
 const themeColors = getThemeColors(archeryOrg.id);
 
-// Navigation links configuration for the archery federation based on their website
+// Navigation links configuration for the archery federation based on the actual website
 const archeryLinks = [
   { to: "/bueskydning/nyheder", label: "Nyheder" },
   { to: "/bueskydning/stævner", label: "Stævner" },
   { to: "/bueskydning/kurser", label: "Kurser" },
-  { to: "/bueskydning/udvalg", label: "Udvalg" },
+  { to: "/bueskydning/forbund", label: "Forbund" },
   { to: "/bueskydning/find-klub", label: "Find Klub" },
-  { to: "/bueskydning/om-os", label: "Om Os" },
-  { to: "/bueskydning/kontakt", label: "Kontakt" },
+  { to: "/bueskydning/landshold", label: "Landshold" },
+  { to: "/bueskydning/love-regler", label: "Love & Regler" },
 ];
 
-// Navbar colors configuration based on federation theme
+// Navbar colors configuration based on refreshed federation theme
 const navbarColors = {
-  bgColor: "bg-green-800",
+  bgColor: "bg-[#075a3a]",
   textColor: "text-white",
-  hoverColor: "text-green-200",
-  mobileMenuBorderColor: "border-green-700",
-  mobileLinkHoverBgColor: "bg-green-700",
-  buttonBgColor: "bg-green-600",
-  buttonHoverBgColor: "bg-green-700",
+  hoverColor: "text-[#32b67a]",
+  mobileMenuBorderColor: "border-[#053024]",
+  mobileLinkHoverBgColor: "bg-[#064a30]",
+  buttonBgColor: "bg-[#32b67a]",
+  buttonHoverBgColor: "bg-[#2a9966]",
 };
 
 // Footer configuration for the archery federation
@@ -45,7 +45,7 @@ const footerColumns = [
       { to: "/bueskydning/nyheder", label: "Nyheder" },
       { to: "/bueskydning/stævner", label: "Stævner" },
       { to: "/bueskydning/kurser", label: "Kurser & Uddannelse" },
-      { to: "/bueskydning/udvalg", label: "Udvalg" },
+      { to: "/bueskydning/forbund", label: "Forbund" },
       { to: "/bueskydning/find-klub", label: "Find Klub" },
     ],
   },
@@ -56,17 +56,18 @@ const footerColumns = [
       { to: "/bueskydning/privatlivspolitik", label: "Privatlivspolitik" },
       { to: "/bueskydning/love-regler", label: "Love & Regler" },
       { to: "/bueskydning/kontakt", label: "Kontakt" },
+      { to: "/bueskydning/udvalg", label: "Udvalg" },
     ],
   },
 ];
 
 const footerColors = {
-  bgColor: "bg-green-900",
+  bgColor: "bg-[#053024]",
   textColor: "text-white",
   headingColor: "text-white",
-  accentColor: "text-green-400",
-  borderColor: "border-green-800",
-  hoverColor: "text-white",
+  accentColor: "text-[#32b67a]",
+  borderColor: "border-[#0a6b45]",
+  hoverColor: "text-[#32b67a]",
 };
 
 function ArcheryLayout() {
