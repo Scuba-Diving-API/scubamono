@@ -85,6 +85,7 @@ function IceHockeyLayout() {
         }}
         links={icehockeyLinks}
         colors={navbarColors}
+        federationId={diuOrg.id}
       />
       <main className="flex-grow">
         <Outlet />

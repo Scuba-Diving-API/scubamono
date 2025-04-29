@@ -28,7 +28,6 @@ const parentNavbarColors = {
 function ParentLayout() {
   return (
     <div className="min-h-screen flex flex-col">
-      <TopNavbar />
       <Navbar
         logo={{
           src: difLogo,

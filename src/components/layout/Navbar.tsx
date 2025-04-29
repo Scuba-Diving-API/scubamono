@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 // Define types for the navbar component
 interface NavLink {
@@ -26,10 +26,18 @@ interface NavbarProps {
     buttonBgColor: string;
     buttonHoverBgColor: string;
   };
+  federationId?: string;
 }
 
-function Navbar({ logo, links, colors }: NavbarProps) {
+function Navbar({ logo, links, colors, federationId }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  
+  // Determine the logo's destination based on the current federation context
+  const logoDestination = federationId ? `/${federationId}` : "/";
+  
+  // Check if we're in a federation context by looking at the URL path
+  const isFederationContext = federationId && location.pathname.startsWith(`/${federationId}`);
 
   return (
     <nav className={`${colors.bgColor} ${colors.textColor} sticky top-0 z-50`}>
@@ -37,7 +45,7 @@ function Navbar({ logo, links, colors }: NavbarProps) {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex items-center">
+            <Link to={logoDestination} className="flex items-center">
               <img src={logo.src} alt={logo.alt} className="h-14 mr-3" />
               {(logo.primaryText || logo.secondaryText) && (
                 <div className="flex flex-col">

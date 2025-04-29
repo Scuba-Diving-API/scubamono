@@ -84,6 +84,7 @@ function Layout() {
         }}
         links={divingLinks}
         colors={navbarColors}
+        federationId={dsfOrg.id}
       />
       <main className="flex-grow">
         <Outlet />
