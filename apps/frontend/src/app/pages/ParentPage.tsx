@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { sportsFederations } from '../utils/federations';
 import ParentHero from '../components/parent/ParentHero';
@@ -7,6 +7,16 @@ function ParentPage() {
   const [hoveredFederation, setHoveredFederation] = useState<string | null>(
     null
   );
+  const navigate = useNavigate();
+
+  // Handle federation click with scroll to top
+  const handleFederationClick = (e: React.MouseEvent, federationId: string) => {
+    e.preventDefault();
+    // Navigate programmatically
+    navigate(`/${federationId}`);
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="bg-white min-h-screen">
@@ -35,6 +45,7 @@ function ParentPage() {
                 className="min-h-[500px] flex flex-col justify-center items-center hover:opacity-90 hover:bg-zinc-700 transition-opacity relative overflow-hidden"
                 onMouseEnter={() => setHoveredFederation(federation.id)}
                 onMouseLeave={() => setHoveredFederation(null)}
+                onClick={(e) => handleFederationClick(e, federation.id)}
               >
                 {federation.video && (
                   <video
