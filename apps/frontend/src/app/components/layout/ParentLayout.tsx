@@ -3,12 +3,12 @@ import Navbar from './Navbar';
 import difLogo from '../../../assets/images/diflogo.svg';
 
 // The parent layout doesn't have an active organization
-// since it represents the top-level DIF site
+// since it represents the top-level Danske Sports site
 
-// Navigation links configuration for the parent site (DIF)
+// Navigation links configuration for the parent site (Danske Sports)
 const parentLinks = [
   { to: '/', label: 'Forside' },
-  { to: '/om-dif', label: 'Om DIF' },
+  { to: '/om-os', label: 'Om Os' },
   { to: '/nyheder', label: 'Nyheder' },
   { to: '/kontakt', label: 'Kontakt' },
 ];
@@ -30,8 +30,8 @@ function ParentLayout() {
       <Navbar
         logo={{
           src: difLogo,
-          alt: 'DIF Logo',
-          primaryText: 'Danmarks Idrætsforbund',
+          alt: 'Danske Sports Logo',
+          primaryText: 'Danske Sports',
         }}
         links={parentLinks}
         colors={parentNavbarColors}
@@ -44,15 +44,13 @@ function ParentLayout() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">
-                Danmarks Idrætsforbund
-              </h3>
+              <h3 className="text-lg font-semibold mb-4">Danske Sports</h3>
               <p className="text-gray-400">
-                Idrættens Hus
+                Lorem ipsum 123
                 <br />
-                Brøndby Stadion 20
+                Vesterbrogade 145
                 <br />
-                2605 Brøndby
+                1620 København V
                 <br />
                 Danmark
               </p>
@@ -60,9 +58,9 @@ function ParentLayout() {
             <div>
               <h3 className="text-lg font-semibold mb-4">Kontakt</h3>
               <p className="text-gray-400">
-                Telefon: +45 43 26 26 26
+                Telefon: +45 43 21 87 65
                 <br />
-                Email: info@dif.dk
+                Email: info@danskesports.dk
               </p>
             </div>
             <div>
@@ -130,7 +128,7 @@ function ParentLayout() {
             </div>
           </div>
           <div className="mt-8 pt-6 border-t border-gray-800 text-center text-gray-400">
-            <p>© 2025 Danmarks Idrætsforbund. Alle rettigheder forbeholdes.</p>
+            <p>© 2025 Danske Sports. Alle rettigheder forbeholdes.</p>
           </div>
         </div>
       </footer>

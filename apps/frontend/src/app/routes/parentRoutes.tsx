@@ -8,7 +8,7 @@ import ParentNewsPage from "../pages/ParentNewsPage";
 const ParentRoutes = (
   <Route key="parent" element={<ParentLayout />}>
     <Route path="/" element={<ParentPage />} />
-    <Route path="/om-dif" element={<ParentAboutPage />} />
+    <Route path="/om-os" element={<ParentAboutPage />} />
     <Route path="/kontakt" element={<ParentContactPage />} />
     <Route path="/nyheder" element={<ParentNewsPage />} />
   </Route>
