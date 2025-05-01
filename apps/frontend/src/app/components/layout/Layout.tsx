@@ -67,12 +67,12 @@ const footerColumns = [
 ];
 
 const footerColors = {
-  bgColor: 'bg-darkblue',
+  bgColor: 'bg-blue-900',
   textColor: 'text-white',
   headingColor: 'text-white',
-  accentColor: 'text-cyan-400',
-  borderColor: 'border-gray-800',
-  hoverColor: 'text-white',
+  accentColor: 'text-cyan-300',
+  borderColor: 'border-blue-800',
+  hoverColor: 'text-cyan-300',
 };
 
 function Layout() {
@@ -107,7 +107,7 @@ function Layout() {
         columns={footerColumns}
         socialLinks={{
           facebook: 'https://www.facebook.com/sportsdykning',
-          instagram: 'https://www.instagram.com/sportsdykning',
+          instagram: 'https://www.instagram.com/dansksportsdykkerforbund/',
           youtube: 'https://www.youtube.com/user/sportsdykning',
         }}
         colors={footerColors}

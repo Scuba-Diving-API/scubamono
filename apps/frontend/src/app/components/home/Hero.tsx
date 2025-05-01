@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import divingVideo from '../../../assets/video/diving-bg.mp4';
 import icehockeyVideo from '../../../assets/video/icehockey-bg.mp4';
 import archeryVideo from '../../../assets/video/bow-bg.mp4';
@@ -15,6 +16,8 @@ interface HeroProps {
   primaryButtonLink?: string;
   secondaryButtonText?: string;
   secondaryButtonLink?: string;
+  primaryButtonHash?: string; // New prop for primary button hash
+  secondaryButtonHash?: string; // New prop for secondary button hash
 }
 
 // Federation-specific hero content
@@ -83,37 +86,37 @@ const federationContent = {
       link: '/archery/bliv-medlem',
       style: 'bg-white text-yellow-900 hover:bg-gray-100',
     },
-    surfing: {
-      video: surfingVideo,
-      bgGradient: 'bg-gradient-to-r from-blue-800 to-blue-600',
-      title: 'Velkommen til Dansk Surf Forbund',
-      subtitle: 'Oplev bølgerne og surfens frihed i Danmark',
-      primaryButton: {
-        text: 'Find lokal klub',
-        link: '/surfing/find-klub',
-        style: 'bg-blue-600 text-white hover:bg-blue-700',
-      },
-      secondaryButton: {
-        text: 'Bliv medlem',
-        link: '/surfing/bliv-medlem',
-        style: 'bg-white text-blue-900 hover:bg-gray-100',
-      },
+  },
+  surfing: {
+    video: surfingVideo,
+    bgGradient: 'bg-gradient-to-r from-blue-800 to-blue-600',
+    title: 'Velkommen til Dansk Surf Forbund',
+    subtitle: 'Oplev bølgerne og surfens frihed i Danmark',
+    primaryButton: {
+      text: 'Find lokal klub',
+      link: '/surfing/find-klub',
+      style: 'bg-blue-600 text-white hover:bg-blue-700',
     },
-    skydiving: {
-      video: skydivingVideo,
-      bgGradient: 'bg-gradient-to-r from-purple-800 to-purple-600',
-      title: 'Velkommen til Dansk Faldskærms Forbund',
-      subtitle: 'Oplev friheden ved faldskærmsudspring i Danmark',
-      primaryButton: {
-        text: 'Find lokal klub',
-        link: '/skydiving/find-klub',
-        style: 'bg-purple-600 text-white hover:bg-purple-700',
-      },
-      secondaryButton: {
-        text: 'Bliv medlem',
-        link: '/skydiving/bliv-medlem',
-        style: 'bg-white text-purple-900 hover:bg-gray-100',
-      },
+    secondaryButton: {
+      text: 'Bliv medlem',
+      link: '/surfing/bliv-medlem',
+      style: 'bg-white text-blue-900 hover:bg-gray-100',
+    },
+  },
+  skydiving: {
+    video: skydivingVideo,
+    bgGradient: 'bg-gradient-to-r from-purple-800 to-purple-600',
+    title: 'Velkommen til Dansk Faldskærms Forbund',
+    subtitle: 'Oplev friheden ved faldskærmsudspring i Danmark',
+    primaryButton: {
+      text: 'Find lokal klub',
+      link: '/skydiving/find-klub',
+      style: 'bg-purple-600 text-white hover:bg-purple-700',
+    },
+    secondaryButton: {
+      text: 'Bliv medlem',
+      link: '/skydiving/bliv-medlem',
+      style: 'bg-white text-purple-900 hover:bg-gray-100',
     },
   },
   // Add more federations as needed
@@ -125,9 +128,13 @@ function Hero({
   subtitle,
   primaryButtonText,
   primaryButtonLink,
+  primaryButtonHash,
   secondaryButtonText,
   secondaryButtonLink,
+  secondaryButtonHash,
 }: HeroProps) {
+  const navigate = useNavigate();
+
   // Get federation-specific content or use diving as default
   const content = useMemo(() => {
     return (
@@ -145,6 +152,22 @@ function Hero({
   const secondaryBtnText = secondaryButtonText || content.secondaryButton.text;
   const secondaryBtnLink = secondaryButtonLink || content.secondaryButton.link;
   const secondaryBtnStyle = content.secondaryButton.style;
+
+  // Handle button click with navigation and scrolling
+  const handleButtonClick = (link: string, hash?: string) => {
+    // Navigate first
+    navigate(link);
+
+    // Then scroll after a short delay to allow the page to load
+    if (hash) {
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  };
 
   return (
     <div className={`relative ${content.bgGradient} text-white`}>
@@ -168,18 +191,25 @@ function Hero({
           <h1 className="text-4xl md:text-5xl font-bold mb-4">{heroTitle}</h1>
           <p className="text-xl mb-8">{heroSubtitle}</p>
           <div className="flex flex-wrap gap-4">
-            <a
-              href={primaryBtnLink}
+            {/* Primary Button */}
+            <button
+              onClick={() =>
+                handleButtonClick(primaryBtnLink, primaryButtonHash)
+              }
               className={`${primaryBtnStyle} px-6 py-3 rounded-full font-medium transition-colors`}
             >
               {primaryBtnText}
-            </a>
-            <a
-              href={secondaryBtnLink}
+            </button>
+
+            {/* Secondary Button */}
+            <button
+              onClick={() =>
+                handleButtonClick(secondaryBtnLink, secondaryButtonHash)
+              }
               className={`${secondaryBtnStyle} px-6 py-3 rounded-full font-medium transition-colors`}
             >
               {secondaryBtnText}
-            </a>
+            </button>
           </div>
         </div>
       </div>
