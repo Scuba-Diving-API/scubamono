@@ -172,7 +172,7 @@ function Membership({
                 <input
                   type="text"
                   placeholder={inputPlaceholder}
-                  className={`flex-1 px-4 py-3 rounded-l-md border border-gray-300 focus:outline-none focus:ring-2 ${focusRing}`}
+                  className={`flex-1 px-4 py-3 rounded-l-md border border-black focus:outline-none focus:ring-2 ${focusRing}`}
                 />
                 <button className={`${buttonBg} text-white px-4 py-3 rounded-r-md transition-colors`}>
                   {buttonText}

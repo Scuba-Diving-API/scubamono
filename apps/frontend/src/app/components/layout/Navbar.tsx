@@ -42,14 +42,25 @@ function Navbar({ logo, links, colors, federationId }: NavbarProps) {
   const isFederationContext =
     federationId && location.pathname.startsWith(`/${federationId}`);
 
-  // Handle hash navigation for links with hash property
-  const handleLinkClick = (link: NavLink, e: React.MouseEvent) => {
-    if (link.hash) {
-      e.preventDefault();
+  // Handle navigation for all links with scroll to top functionality
+  const handleNavigation = (link: NavLink, e: React.MouseEvent) => {
+    // Don't interfere with external links
+    if (link.isExternal) return;
 
+    e.preventDefault();
+
+    // If the link has a hash, handle specific element scrolling
+    if (link.hash) {
       // Navigate to the page first if we're not already there
       if (location.pathname !== link.to) {
-        window.location.href = `${link.to}${link.hash}`;
+        navigate(link.to);
+        // After navigation, scroll to the specific element
+        setTimeout(() => {
+          const element = link.hash ? document.querySelector(link.hash) : null;
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100);
         return;
       }
 
@@ -58,7 +69,12 @@ function Navbar({ logo, links, colors, federationId }: NavbarProps) {
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
+      return;
     }
+
+    // For regular links without hash, navigate and scroll to top
+    navigate(link.to);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // Handle logo click to scroll to top
@@ -82,6 +98,11 @@ function Navbar({ logo, links, colors, federationId }: NavbarProps) {
       }, 100);
     }
   };
+
+  // Close mobile menu when location changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location]);
 
   return (
     <nav className={`${colors.bgColor} ${colors.textColor} sticky top-0 z-50`}>
@@ -121,7 +142,7 @@ function Navbar({ logo, links, colors, federationId }: NavbarProps) {
                   to={link.to}
                   className={`font-medium ${colors.buttonBgColor} px-4 py-2 rounded-full hover:${colors.buttonHoverBgColor} transition-colors`}
                   target={link.isExternal ? '_blank' : undefined}
-                  onClick={(e) => link.hash && handleLinkClick(link, e)}
+                  onClick={(e) => handleNavigation(link, e)}
                 >
                   {link.label}
                 </Link>
@@ -131,7 +152,7 @@ function Navbar({ logo, links, colors, federationId }: NavbarProps) {
                   to={link.to}
                   className={`font-medium hover:${colors.hoverColor} transition-colors`}
                   target={link.isExternal ? '_blank' : undefined}
-                  onClick={(e) => link.hash && handleLinkClick(link, e)}
+                  onClick={(e) => handleNavigation(link, e)}
                 >
                   {link.label}
                 </Link>
@@ -183,7 +204,7 @@ function Navbar({ logo, links, colors, federationId }: NavbarProps) {
                       : `px-3 py-2 hover:${colors.mobileLinkHoverBgColor} rounded-md`
                   }
                   target={link.isExternal ? '_blank' : undefined}
-                  onClick={(e) => link.hash && handleLinkClick(link, e)}
+                  onClick={(e) => handleNavigation(link, e)}
                 >
                   {link.label}
                 </Link>
