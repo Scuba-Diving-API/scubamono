@@ -1,3 +1,15 @@
+export interface StrapiResponse<T> {
+  data: T[];
+  meta: {
+    pagination: {
+      page: number;
+      pageSize: number;
+      pageCount: number;
+      total: number;
+    };
+  };
+}
+
 export interface Category {
   id: number;
   documentId: string;
@@ -20,7 +32,7 @@ export interface NewsFeed {
   publishedAt: string | null;
 }
 
-export interface Event {
+export interface EventData {
   id: number;
   documentId: string;
   title: string;
