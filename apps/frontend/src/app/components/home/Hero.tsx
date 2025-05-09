@@ -38,7 +38,7 @@ const federationContent = {
   },
   icehockey: {
     video: icehockeyVideo,
-    bgGradient: 'bg-gradient-to-r from-red-900 to-red-700',
+    bgGradient: 'bg-gradient-to-r from-zinc-700 to-zinc-700',
     title: 'Velkommen til Danmarks Ishockey Union',
     subtitle: 'Oplev ishockeyens fart og spænding i en klub nær dig',
     primaryButton: {
