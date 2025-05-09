@@ -104,10 +104,10 @@ function EventsPage() {
   const { data: eventsResponse, isLoading, isFetching } = useGetEventsQuery();
 
   // Filter events based on selected category
-  const filteredEvents =
+  /* const filteredEvents =
     filterCategory === 'Alle'
       ? eventsData
-      : eventsData.filter((event) => event.category === filterCategory);
+      : eventsData.filter((event) => event.category === filterCategory); */
 
   // Get unique categories
   const categories = [
