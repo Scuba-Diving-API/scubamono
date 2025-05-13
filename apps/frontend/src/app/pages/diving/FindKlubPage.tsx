@@ -152,11 +152,12 @@ const FindKlubPage = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           {/* Map Container - Takes 3/5 of the width on large screens */}
-          <div className="lg:col-span-3 h-[600px] rounded-lg overflow-hidden shadow-md">
+          <div className="lg:col-span-3 h-[600px] rounded-lg overflow-hidden shadow-md relative z-10">
             <MapContainer
               center={mapCenter}
               zoom={mapZoom}
               style={{ height: '100%', width: '100%' }}
+              className="z-20"
             >
               <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

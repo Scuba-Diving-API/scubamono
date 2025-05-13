@@ -105,7 +105,9 @@ function Navbar({ logo, links, colors, federationId }: NavbarProps) {
   }, [location]);
 
   return (
-    <nav className={`${colors.bgColor} ${colors.textColor} sticky top-0 z-50`}>
+    <nav
+      className={`${colors.bgColor} ${colors.textColor} sticky top-0 z-[999]`}
+    >
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           {/* Logo */}

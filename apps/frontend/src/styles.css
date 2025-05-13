@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 /* You can add global styles to this file, and also import other style files */
+
+/* Fix Leaflet z-index issues */
+.leaflet-pane {
+  z-index: 20;
+}
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 20;
+}
