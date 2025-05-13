@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useGetEventsQuery } from '../../api/api';
 import EventCard from '../components/events/EventCard';
 import { EventData } from '../../types/types';
@@ -115,10 +115,6 @@ function EventsPage() {
     ...new Set(eventsData.map((event) => event.category)),
   ];
 
-  useEffect(() => {
-    console.log('Fetched events:', eventsResponse);
-  }, [eventsResponse]);
-
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
@@ -221,23 +217,6 @@ function EventsPage() {
 
         {/* Event Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {/* {filteredEvents.map((event) => (
-            <Link key={event.id} to={`/events/${event.id}`} className="bg-white rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg flex flex-col h-full">
-              <div className="relative">
-                <div className="h-48 overflow-hidden">
-                  <img src={event.image} alt={event.title} className="w-full h-full object-cover transition-transform hover:scale-105 duration-300" />
-                </div>
-                <div className="absolute top-4 left-4 bg-[#57b5eb] text-white px-3 py-1 rounded-full text-sm">{event.date}</div>
-                <div className="absolute top-4 right-4 bg-[#b1d9f5] text-[#0d2d52] px-3 py-1 rounded-full text-sm font-medium">{event.category}</div>
-              </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="font-bold text-xl mb-2 text-[#0d2d52]">{event.title}</h3>
-                <p className="text-gray-500 text-sm mb-3">{event.location}</p>
-                <p className="text-gray-600 mb-4 flex-grow">{event.description}</p>
-                <span className="text-[#57b5eb] font-medium mt-auto">Læs mere →</span>
-              </div>
-            </Link>
-          ))} */}
           {isLoading || isFetching ? (
             <div className="col-span-3 text-center">
               <p className="text-gray-500">Indlæser events...</p>

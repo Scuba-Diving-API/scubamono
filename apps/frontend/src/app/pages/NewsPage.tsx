@@ -105,12 +105,6 @@ function NewsPage() {
     fetchNews();
   }, []);
 
-  useEffect(() => {
-    if (news.length > 0) {
-      console.log('Fetched news:', news);
-    }
-  }, [news]);
-
   return (
     <div className="bg-gray-50 py-8">
       <div className="container mx-auto px-4">
@@ -146,19 +140,6 @@ function NewsPage() {
         </div>
 
         {/* News Grid */}
-        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {newsData.map((news) => (
-            <NewsCard
-              key={news.id}
-              id={news.id}
-              category={news.category}
-              date={news.date}
-              title={news.title}
-              excerpt={news.excerpt}
-              image={news.image}
-            />
-          ))}
-        </div> */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {news &&
             news.map((news) => (
