@@ -1,4 +1,4 @@
-import { NewsFeed } from '../types/types';
+import { EventData, NewsFeed } from '../types/types';
 
 export const STRAPI_URL = 'http://localhost:1337';
 const STRAPI_API = `${STRAPI_URL}/api`;
@@ -28,6 +28,34 @@ export async function getNewsFeed() {
     body: item.body,
     // @ts-expect-error this will give an error but the category name is always there
     category: item.category.name,
+    createdAt: item.createdAt,
+    updatedAt: item.updatedAt,
+    publishedAt: item.publishedAt,
+  }));
+}
+
+export async function getEvents() {
+  const response = await fetch(`${STRAPI_API}/events?populate=*`, {
+    method: 'GET',
+    headers,
+  });
+  if (!response.ok) {
+    console.error('Failed to fetch events');
+    throw new Error('Failed to fetch events');
+  }
+  const data = await response.json();
+  return data.data.map((item: EventData) => ({
+    id: item.id,
+    documentId: item.documentId,
+    title: item.title,
+    subtitle: item.subtitle,
+    // @ts-expect-error this will give an error but the image url is always there
+    image: item.image.url,
+    body: item.body,
+    startDate: item.startDate,
+    endDate: item.endDate,
+    type: item.type,
+    link: item.link,
     createdAt: item.createdAt,
     updatedAt: item.updatedAt,
     publishedAt: item.publishedAt,

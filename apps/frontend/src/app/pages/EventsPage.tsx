@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useGetEventsQuery } from '../../api/api';
 import EventCard from '../components/events/EventCard';
 import { EventData } from '../../types/types';
+import { getEvents } from '../../api/endpoints';
 
 // Mock events data
 const eventsData = [
@@ -100,6 +101,21 @@ const eventsData = [
 
 function EventsPage() {
   const [filterCategory, setFilterCategory] = useState('Alle');
+  const [events, setEvents] = useState<EventData[]>([]);
+
+  useEffect(() => {
+    async function fetchEvents() {
+      try {
+        const data = await getEvents();
+        if (data) {
+          setEvents(data);
+        }
+      } catch (error) {
+        console.error('Failed to fetch events:', error);
+      }
+    }
+    fetchEvents();
+  }, []);
 
   const { data: eventsResponse, isLoading, isFetching } = useGetEventsQuery();
 
@@ -114,6 +130,8 @@ function EventsPage() {
     'Alle',
     ...new Set(eventsData.map((event) => event.category)),
   ];
+
+  console.log(events);
 
   return (
     <div className="bg-gray-50 min-h-screen">
