@@ -101,6 +101,7 @@ const eventsData = [
 
 function EventsPage() {
   const [filterCategory, setFilterCategory] = useState('Alle');
+ 
   const [events, setEvents] = useState<EventData[]>([]);
 
   useEffect(() => {
